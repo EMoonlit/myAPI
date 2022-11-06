@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="Class1.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\MyApi.Infra.Data\MyApi.Infra.Data.csproj" />
+      <ProjectReference Include="..\MyApi.Application\MyApi.Application.csproj" />
+      <ProjectReference Include="..\MyApi.Domain\MyApi.Domain.csproj" />
+    </ItemGroup>
+
+</Project>
