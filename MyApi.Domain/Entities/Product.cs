@@ -4,7 +4,7 @@ namespace MyApi.Domain.Entities;
 
 public class Product
 {
-    public string Id { get; private set; }
+    public Guid Id { get; private set; }
     public string Name { get; private set; }
     public string CodeErp { get; private set; }
     public decimal Price { get; private set; }
@@ -13,14 +13,7 @@ public class Product
     public Product(string name, string codeErp, decimal price)
     {
         Validation(name, codeErp, price);
-        Purchases = new List<Purchase>();
-    }
-
-    public Product(string id, string name, string codeErp, decimal price)
-    {
-        DomainValidationsExceptions.When(string.IsNullOrEmpty(id), "Id is Required");
-        Validation(name, codeErp, price);
-        Id = id;
+        Id = Guid.NewGuid();
         Purchases = new List<Purchase>();
     }
 

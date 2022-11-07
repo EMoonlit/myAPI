@@ -4,7 +4,7 @@ namespace MyApi.Domain.Repositories;
 
 public interface IProductRepository
 {
-    Task<Product> GetByIdAsync(string id);
+    Task<Product> GetByIdAsync(Guid id);
     Task<ICollection<Product>> GetAllAsync();
     Task<Product> CreateAsync(Product product);
     Task EditAsync(Product product);

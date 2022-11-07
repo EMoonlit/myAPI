@@ -4,7 +4,7 @@ namespace MyApi.Domain.Entities;
 
 public sealed class Person
 {
-    public string Id { get; private set; }
+    public Guid Id { get; private set; }
     public string Name { get; private set; }
     public string Document { get; private set; }
     public string Phone { get; private set; }
@@ -13,15 +13,9 @@ public sealed class Person
     
     public Person(string name, string document, string phone)
     {
-        Validation(name, document, phone);
-        Purchases = new List<Purchase>();
-    }
 
-    public Person(string id, string name, string document, string phone)
-    {
-        DomainValidationsExceptions.When(string.IsNullOrEmpty(id), "Id is Required");
         Validation(name, document, phone);
-        Id = id;
+        Id = Guid.NewGuid();
         Purchases = new List<Purchase>();
     }
 
