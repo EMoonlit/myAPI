@@ -4,7 +4,7 @@ namespace MyApi.Domain.Repositories;
 
 public interface IPersonRepository
 {
-    Task<Person> GetByIdAsync(string id);
+    Task<Person> GetByIdAsync(Guid id);
     Task<ICollection<Person>> GetAllAsync();
     Task<Person> CreateAsync(Person person);
     Task EditAsync(Person person);
